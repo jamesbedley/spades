@@ -21,9 +21,9 @@
     <link rel="manifest" href="/spades/3062/spades-manifest.json" />
     
 
-    <link rel="preload" href="/shared/images/fonts/Slackey-Regular.woff" as="font" crossorigin="anonymous"/>
+    <link rel="preload" href="/spades/shared/images/fonts/Slackey-Regular.woff" as="font" crossorigin="anonymous"/>
 
-    <link rel="icon" href="/shared/images/favicon32.png" sizes="32x32" />
+    <link rel="icon" href="/spades/shared/images/favicon32.png" sizes="32x32" />
 
     
     <link rel="icon" href="/spades/images/spades-touch-icon-192.png" sizes="192x192" />
@@ -36,7 +36,7 @@
         var siteVersion = '3062';
         var showAds = 'adsense';
         var customChannelId = '4380984990';
-        var players = {"bottom":{"name":"You","face":"/shared/images/svg/face-0.svg","faceSad":"/shared/images/svg/face-0-sad.svg","code":"0","defaultName":"You"},"left":{"name":"Mike","face":"/shared/images/svg/face-mike.svg","faceSad":"/shared/images/svg/face-mike-sad.svg","code":"mlpge","defaultName":"Mike"},"top":{"name":"Bill","face":"/shared/images/svg/face-2.svg","faceSad":"/shared/images/svg/face-2-sad.svg","code":"2","defaultName":"Bill"},"right":{"name":"Lisa","face":"/shared/images/svg/face-3.svg","faceSad":"/shared/images/svg/face-3-sad.svg","code":"3","defaultName":"Lisa"}};
+        var players = {"bottom":{"name":"You","face":"/spades/shared/images/svg/face-0.svg","faceSad":"/spades/shared/images/svg/face-0-sad.svg","code":"0","defaultName":"You"},"left":{"name":"Mike","face":"/spades/shared/images/svg/face-mike.svg","faceSad":"/spades/shared/images/svg/face-mike-sad.svg","code":"mlpge","defaultName":"Mike"},"top":{"name":"Bill","face":"/spades/shared/images/svg/face-2.svg","faceSad":"/spades/shared/images/svg/face-2-sad.svg","code":"2","defaultName":"Bill"},"right":{"name":"Lisa","face":"/spades/shared/images/svg/face-3.svg","faceSad":"/spades/shared/images/svg/face-3-sad.svg","code":"3","defaultName":"Lisa"}};
         var STATIC_ASSET_DOMAIN = 'https://d3hp2os08tb528.cloudfront.net';
         var APP_MODE = false;
 
@@ -99,28 +99,28 @@
 
     <style id="player-faces-style">
         .face-bottom-player {
-            background-image:url(/shared/images/svg/face-0.svg);
+            background-image:url(/spades/shared/images/svg/face-0.svg);
         }
         .face-left-player {
-            background-image:url(/shared/images/svg/face-mike.svg);
+            background-image:url(/spades/shared/images/svg/face-mike.svg);
         }
         .face-top-player {
-            background-image:url(/shared/images/svg/face-2.svg);
+            background-image:url(/spades/shared/images/svg/face-2.svg);
         }
         .face-right-player {
-            background-image:url(/shared/images/svg/face-3.svg);
+            background-image:url(/spades/shared/images/svg/face-3.svg);
         }
         .face-bottom-player.sad {
-            background-image:url(/shared/images/svg/face-0-sad.svg);
+            background-image:url(/spades/shared/images/svg/face-0-sad.svg);
         }
         .face-left-player.sad {
-            background-image:url(/shared/images/svg/face-mike-sad.svg);
+            background-image:url(/spades/shared/images/svg/face-mike-sad.svg);
         }
         .face-top-player.sad {
-            background-image:url(/shared/images/svg/face-2-sad.svg);
+            background-image:url(/spades/shared/images/svg/face-2-sad.svg);
         }
         .face-right-player.sad {
-            background-image:url(/shared/images/svg/face-3-sad.svg);
+            background-image:url(/spades/shared/images/svg/face-3-sad.svg);
         }
         
     </style>
@@ -132,8 +132,8 @@
             if (!localStorage[KEY]) {
                 localStorage[KEY] = JSON.stringify({
                     bottom : {
-                        face : '/shared/images/svg/face-0.svg',
-                        faceSad : '/shared/images/svg/face-0-sad.svg',
+                        face : '/spades/shared/images/svg/face-0.svg',
+                        faceSad : '/spades/shared/images/svg/face-0-sad.svg',
                         name : 'You',
                         code : '0'
                     }
@@ -1499,15 +1499,15 @@
         <!-- end row 3 -->
 
 
-        <script type="text/javascript" src="/shared/lib/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="/spades/shared/lib/jquery-1.9.1.min.js"></script>
         
-        <script type="text/javascript" src="/shared/lib/socket.io.js"></script>
+        <script type="text/javascript" src="/spades/shared/lib/socket.io.js"></script>
         
         <script>
             //Only load huge polyfill file for crap browsers...
             if (typeof Symbol === 'undefined' || !Array.prototype.find || !Array.prototype.includes) {
                 //Must load this completely before the game code, hence the document.write...
-                document.write('<scr' + 'ipt src="/shared/lib/polyfill.min.js"></scri' + 'pt>');
+                document.write('<scr' + 'ipt src="/spades/shared/lib/polyfill.min.js"></scri' + 'pt>');
                 window.polyfilled = true;
             }
 
