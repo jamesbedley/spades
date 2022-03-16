@@ -2,33 +2,33 @@
 <html lang="en" class="spades">
 <head>
     <title>Spades | Play it online</title>
-    <meta charset="utf-8"> 
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="Description" content="Play the classic card game Spades online for free, against the computer or your friends. No download required, just start playing!" />
-    
-    
+
+
     <!-- Removed, don't want the banner showing up where we don't want it <meta name="apple-itunes-app" content="app-id=1496007149" /> -->
 
 
-    
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    
 
-    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+
+
     <meta name="apple-mobile-web-app-title" content='Spades' />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="apple-touch-icon" href="/spades/images/spades-touch-icon.png" />
     <link rel="manifest" href="/spades/3062/spades-manifest.json" />
-    
+
 
     <link rel="preload" href="/spades/shared/images/fonts/Slackey-Regular.woff" as="font" crossorigin="anonymous"/>
 
     <link rel="icon" href="/spades/shared/images/favicon32.png" sizes="32x32" />
 
-    
+
     <link rel="icon" href="/spades/images/spades-touch-icon-192.png" sizes="192x192" />
-    
-    
+
+
     <script>
         var adFreeCode = (document.cookie.match(/adfreecode=(\w+)/)||[])[1];
         var category = "Spades";
@@ -45,9 +45,9 @@
             document.documentElement.className += ' appmode';
         }
 
-    
+
         var defaultSettings = {"speed":{"defaultValue":"normal","allowedValues":["verySlow","slow","normal","fast","veryFast"]}};
-    
+
         var defaultSiteSettings = {"players":{},"playerName":"","multiplayerPublicId":"","multiplayerPrivateId":"","multiplayerPhrases":{},"blocked":{},"muted":{},"alwaysUseInterstitialAds":false,"confetti":true,"gameLinks":"","playerRating":0,"multiplayerGameInProgress":false,"showAdSettingsLink":false,"spreadCards":false,"svgCards":false,"forceDesktopLook":false,"acceptCookiesId":0,"showPersonalizedAds":true,"showDesktopInterstitials":true,"hideAdblockAd":false,"useDarkTheme":false,"holidayThemes":true,"hideMultiplayerButton":false,"mandalorian":0};
 
         function getSiteSettingBool(name, defaultVal) {
@@ -74,10 +74,10 @@
                     alert(msg);
                 }
             };
-        } 
+        }
     </script>
 
-    <script>     
+    <script>
         try {
             //Allow people to force the desktop look.
             //First check if we're on mobile to decide whether to display the option
@@ -122,11 +122,11 @@
         .face-right-player.sad {
             background-image:url(/spades/shared/images/svg/face-3-sad.svg);
         }
-        
+
     </style>
 
     <script>
-        
+
         function loadPlayerFaces() {
             var KEY = 'site.players';
             if (!localStorage[KEY]) {
@@ -154,14 +154,14 @@
                     type : 'custom',
                     code: "bamoe",
                     face: "https://cardgames.io/lambda/faces/bamoe",
-                    faceSad: "https://cardgames.io/lambda/faces/bamoe/sad"            
+                    faceSad: "https://cardgames.io/lambda/faces/bamoe/sad"
                 };
-            } 
+            }
             var pdata;
             var css = '';
 
 
-            
+
 
             //Need to do this here to avoid any ugly flickering of faces...
             if (location.search.match(/\?gid=(.*)/)) {
@@ -192,7 +192,7 @@
                     location.href = location.pathname;
                 }
             }
-            
+
 
 
             var hideNames = false;
@@ -227,15 +227,15 @@
                 document.getElementsByTagName('head')[0].appendChild(tmpStyle);
             }
         }
-        
+
         try {
             loadPlayerFaces();
         } catch(ex) { /*Nevermind*/}
-    
+
     </script>
-    
-    
-    
+
+
+
     <script>
             //Do this before body starts rendering to avoid ugly flicker on mobile when calculating the height
             (function() {
@@ -247,7 +247,7 @@
             if (APP_MODE) {
                 return; //Can count on calculated things here...
             }
-            var fillMobileViewPort = true; 
+            var fillMobileViewPort = true;
             if (innerWidth <= MOBILE_BREAKPOINT && fillMobileViewPort) {
                 //Are in the mobile look, might have to force set the height
                 var height = innerHeight - MOBILE_HEADER_HEIGHT;
@@ -257,11 +257,11 @@
                     height = Math.max(height, MIN_BOARD_HEIGHT);
                 }
 
-                //Some hacks here to get the iPhone app height perfect, it's surprisingly fiddly to get it right... 
-                if (APP_MODE && innerHeight <= 667) { 
+                //Some hacks here to get the iPhone app height perfect, it's surprisingly fiddly to get it right...
+                if (APP_MODE && innerHeight <= 667) {
                     height -= 5;
                 }
-                
+
                 var el = document.createElement('style');
                 el.innerHTML = '#play-page { height:' + height + 'px; }';
                 el.id = 'viewport-height';
@@ -269,35 +269,31 @@
             }
         })();
     </script>
-    
+
     <link rel="canonical" href="https://cardgames.io/spades/" />
-    
-    
-    
-    
+
+
+
+
     <!--Open Graph Protocol metadata-->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@cardgames_io" />
     <meta name="twitter:creator" content="@einaregilsson" />
-    
+
     <meta property="og:title" content="Spades" />
     <meta property="og:description" content="Play the classic card game Spades online for free." />
     <meta property="og:type" content="game" />
     <meta property="og:url" content="https://cardgames.io/spades/" />
     <meta property="og:image" content="https://cardgames.io/spades/images/spades-logo.png" />
     <meta property="fb:app_id" content="1824725124440462" />
-    <meta property="fb:admins" content="808179882" /> 
-    
-    
-    
+    <meta property="fb:admins" content="808179882" />
 
-    
+
+
+
+
 
     <script>
-
-        //Setup basic ad stuff
-        window.adsbygoogle = [];
-        var adBreak = adConfig = function(o) { window.adsbygoogle.push(o); }
 
     //Check for custom links
 
@@ -342,12 +338,12 @@
 
             if (document.location.search.match(/\btheme=(\w+)/)) {
                 this.current = RegExp.$1;
-            }            
+            }
 
             if (this.current == '' || this.isTurnedOff()) {
                 return;
-            } 
-          
+            }
+
             document.write("<link href='/themes/3062/" + this.current + ".min.css' id='theme-css' rel='stylesheet' type='text/css'>");
             var html = document.getElementsByTagName('html');
             if (html && html[0]) {
@@ -415,7 +411,7 @@
                 return true;
             }
         },
-        
+
         usesDarkTheme : function() {
             try {
                 return localStorage['site.useDarkTheme'] === 'true';
@@ -449,11 +445,11 @@
             }
         }
     };
-    
+
     try {
-       themes.init(); 
+       themes.init();
     } catch(ex) {}
-    
+
 
 
      var mainTheme = {
@@ -471,20 +467,20 @@
     mainTheme.init();
     </script>
 
-    
-    
-    
-    
+
+
+
+
 
 </head>
 <body>
 <!--**************************************************************************
  This code is copyright (C) Raudas Hugbunadur ehf (Red Ace Software LLC)
- 
+
  This code is NOT open source, and it is NOT permitted to use it on other
  sites, modify it, or otherwise use it for any other purpose than playing
  on one of our sites, (https://cardgames.io, https://iochess.com)
- 
+
  I've had to deal with multiple people stealing my work and I'm sick of it.
  Don't be a dick, write your own game!
 ***************************************************************************-->
@@ -492,28 +488,28 @@
 
     <div id="game-link-wrapper">
         <div id="promo-links">
-            
+
             <div id="mobile-options">
                 <label>SPADES</label>
                 <a href="#newgame">New Game</a>
-                                
-                
+
+
                 <a href="#rules">Rules</a>
                 <a class="appmode-remove" href="#about">About</a>
                 <a href="#options">Options</a>
-                
+
                 <a href="#multiplayer-lobby" class="multiplayer-lobby-link">Multiplayer</a>
-                
+
                 <a href="/spades/statistics/">Statistics</a>
-                
+
                 <a href="/avatars/">Change player</a>
                 <a id="opponents-link" href="/opponents/">Change opponents</a>
                 <a id="manage-blocklist-menu" href="/blocklist/">Blocked users</a>
                 <a href="#ad-settings" id="ad-settings">Ads &amp; Privacy</a>
-                
+
             </div>
-            
-            
+
+
             <div class="game-links">
                 <label>CARD GAMES</label>
                 <a href="/crazyeights/">Crazy&nbsp;Eights</a>
@@ -533,7 +529,7 @@
                 <a href="/switch/">Switch</a>
                 <a href="/thirteen/">Thirteen</a>
                 <a href="/war/">War</a>
-                <a href="/whist/">Whist</a>      
+                <a href="/whist/">Whist</a>
             </div>
             <div class="game-links">
                 <label>SOLITAIRES</label>
@@ -573,19 +569,19 @@
             </div>
             <button class="big hide-mobile appmode-remove" id="close-menu">CLOSE GAME MENU</button>
             <a id="customize-menu" class="hide-mobile appmode-remove" href="#customize-menu">Customize...</a>
-            
-        </div>    
+
+        </div>
     </div>
-    
+
     <button id="mobile-menu">
         <span class="menu-row-1"></span>
         <span class="menu-row-2"></span>
         <span class="menu-row-3"></span>
     </button>
-    
+
 
     <div id="wrapper">
-    
+
 
         <!-- row 1, the promo links/menu -->
         <a id="play"></a>
@@ -595,62 +591,20 @@
         <div id="board-wrapper-and-ads">
             <div id="draper-left" class="don-draper appmode-remove">
                 <label>Advertisement</label>
-                
 
-                
-                <!-- Spades Left Skyscraper -->
-                <ins class="adsbygoogle adslot_1"
-                    data-ad-client="ca-pub-9002823967926225"
-                    data-ad-slot="8003790993"
-                    data-ad-format="auto"></ins>
-                <script>
-                adsbygoogle.push({});
-                </script>
-                
-                
+
             </div>
             <div id="board-and-header">
-                
-                <div id="promo-mini" class="hide-mobile appmode-remove">
-                    <span id="customizable-links">
-                        <a href="/hearts/" class="default-game-link">Hearts</a>
-                        <a href="/solitaire/" class="default-game-link">Solitaire</a>
-                        <a href="/spades/" class="default-game-link">Spades</a>
-                        <a href="/freecell/" class="default-game-link">FreeCell</a>
-                        <a href="/cribbage/" class="default-game-link">Cribbage</a>
-                        <a href="/yahtzee/" class="default-game-link">Yahtzee</a>
-                        <a href="/ginrummy/" class="default-game-link">Gin&nbsp;Rummy</a>
-                        <script>
-                            //Add custom links with document.write to avoid ugly flicker...
-                            try {
-                                var links = localStorage['site.gameLinks'];
-                                if (links) {
-                                    var names = links.split(',');
-                                    for (var i=0; i < names.length; i++) {
-                                        var name = names[i];
-                                        var url = '/' + name.replace(/\s*/g, '').replace(/&nbsp;/, '').replace(/!/g, '').toLowerCase() + '/';
-                                        var link = '<a href="' + url + '">' + name + '</a>';
-                                        document.write(link);
-                                    }
-                                }
-                            } catch(ex) {
-                                //Nevermind...
-                            }
-                        </script>
-                    </span>
-                    <a href="/farkle/" class="newest-game">Farkle</a>
-                    <a href="#more-games" id="more-games-link">More games...</a>
-                </div>
-                
+
                 <div id="header">
                     <div id="title">
                          <h1>SPADES</h1>
                     </div>
 
-                    
+
                     <div id="menucontainer" class="hide-mobile">
                         <ul id="menu">
-                            
+
 <li><a title="Start a new game of Spades against the computer" href="#newgame">New Game</a></li>
 
 
@@ -669,50 +623,50 @@
 
                         </ul>
                     </div>
-                    
+
                 </div>
 
-                
+
                 <div id="board" class="board spades">
                     <div id="draper-inline-video"></div>
-                    
+
 
 <div id="play-page" class="inner-page">
-    
+
 
         <div id="left-player" class="avatar">
             <div class="face-small face-left-player"></div>
             <small class="left-player-name">Mike</small>
             <div id="left-player-bubble" class="bubble"><p><span></span></p></div>
-            
+
         </div>
 
         <div id="right-player" class="avatar">
             <div class="face-small face-right-player"></div>
             <small class="right-player-name">Lisa</small>
             <div id="right-player-bubble" class="bubble"><p><span></span></p></div>
-            
+
         </div>
-        
+
         <div id="top-player" class="avatar">
             <div class="face-small face-top-player"></div>
             <small class="top-player-name">Bill</small>
             <div id="top-player-bubble" class="bubble"><p><span></span></p></div>
-            
+
         </div>
 
         <div id="bottom-player" class="avatar">
             <div class="face-small face-bottom-player"></div>
             <small class="bottom-player-name">You</small>
             <div id="bottom-player-bubble" class="bubble"><p><span></span></p></div>
-            
+
         </div>
-        
+
         <a href="/avatars/" id="open-player-picker" class="multiplayer-hide">Change<span> player...</span></a>
-       
-        
-        
-    
+
+
+
+
 
     <div id="messageBox"><p>Click Deal to start the game.</p></div>
 
@@ -729,13 +683,13 @@
             <a href="https://www.google.com/chrome/" class="righticon" target="_blank">
                 <img id = "Chrome-Logo" border="0" alt="Download Google Chrome" src="" width="100" height="100">
                 <span class="caption"> Download Google Chrome</span>
-            </a>       
+            </a>
         </p>
         <a id="hidebutton" onclick="$('#oldbrowser').hide();">(hide)</a>
     </div>
     <!-- End Old browser. Usually hidden. -->
-    
-    
+
+
     <div id="deal" class="multiplayer-hide"><button class="big">Deal</button></div>
 	<div id="bid-div">
 		<div id="bid-div-inner">
@@ -770,16 +724,16 @@
     </div>
 
 
-    
+
     <div id="game-options-page" class="dialog options-page">
         <h2>OPTIONS</h2>
         <div id="options-version">v0.1 (12345678)</div>
         <div id="options-pane-container">
             <div id="game-options" class="options-pane">
                 <h3>Spades</h3>
-                
-                
-                
+
+
+
                 <div class="option-row" id="speed-option-label">
                     <label>Game speed</label>
                     <label id="speed-value"></label>
@@ -792,7 +746,7 @@
                     <label><input name="speed" type="radio" value="veryFast" /><span>Fast</span></label>
                     <div style="clear:both;"></div>
                 </div>
-                
+
             </div>
             <div id="site-options" class="options-pane">
                 <h3>All games</h3>
@@ -826,10 +780,10 @@
         <small class="appmode-hide">Certain changes only take effect after refreshing the page.</small>
         <button id="close-options">Close</button>
     </div>
-    
-    
-         
-            
+
+
+
+
 
 
 
@@ -851,7 +805,7 @@
     <div id="error-message-box" class="lobby-dialog">
         <h3></h3>
         <p></p>
-        
+
         <div class="lobby-dialog-buttons">
             <button>OK</button>
         </div>
@@ -868,7 +822,7 @@
     <div id="multiplayer-lobby-tables">
     </div>
     <div id="private">
-        Want to create a table for just you and your friends? You can 
+        Want to create a table for just you and your friends? You can
         <a href="#" id="create-private-table">Create a private table</a> or if someone has sent you a code you can <a href="#" id="join-private-table">join a private table</a>.
     </div>
     <div class="multiplayer-close-container">
@@ -977,10 +931,10 @@
         <h2>ACHIEVEMENT UNLOCKED</h2>
         <div class="stars"></div>
     </div>
-    
+
     <p>
         It looks like you might be a <span class="m-name"></span>. You can now wear a Beskar armor while playing.
-    </p> 
+    </p>
     <div id="mandalorian-face">
 
     </div>
@@ -1027,7 +981,7 @@
 </div>
 
 <div id="cover">
-    
+
 </div>
 
 
@@ -1085,18 +1039,18 @@
         <button class="close-dialog" id="turn-off-timer-ok">OK</button>
     </div>
 </div>
- 
-        
-        
+
+
+
 <!-- Kind of awkward not including this in multiplayer.html, but we want to be able to override these for individual games-->
 <div id="multiplayer-buttons">
 	<button id="speak" class="multiplayergame-active">Speak</button>
 	<button id="multiplayer-button" class="multiplayergame-not-active multiplayer-lobby-link">Multiplayer</button>
 </div>
 
-    
 
-    
+
+
 	<!-- Win and lose screens -->
 	<div class="dialog results" id="result-box">
 		<h3 id="result-header">Congratulations, you won this hand!</h3>
@@ -1218,11 +1172,11 @@
                         <h3>We are using cookies!</h3>
                         <p>
                             Hi. Sorry to interrupt you. On this website we use cookies and other related technologies to make the games work (keeping scores, statistics etc), to save your preferences, and
-                            our advertising partners (Google and others) use cookies to personalize the ads you are shown while playing, based on data they have about you from other sites you've visited. 
+                            our advertising partners (Google and others) use cookies to personalize the ads you are shown while playing, based on data they have about you from other sites you've visited.
                             <span id="require-paragraph">We are required to notify you about this and get your consent to store cookies in your browser.</span>
                         </p>
                         <p>
-                            Click the "I Agree" button below to accept our terms and cookie use. You can opt out of seeing personalized ads below, if you do so you will still see ads but they may be less relevant for you. For more details, 
+                            Click the "I Agree" button below to accept our terms and cookie use. You can opt out of seeing personalized ads below, if you do so you will still see ads but they may be less relevant for you. For more details,
                             please <a href="/privacy/">read our full privacy and cookie policy</a>.
                         </p>
                         <div class="gdpr-options">
@@ -1234,7 +1188,7 @@
                     </div>
                     <div id="app-prompt">
                         <h3>We have an app now!</h3>
-                       
+
                         <a id="app-icon" href="">&nbsp;</a>
                         <p>
                             We've created a new CardGames.io app for your <span id="app-prompt-tablet">tablet</span><span id="app-prompt-phone">phone</span>! All the games from the website, in fullscreen mode, with more characters! Would you like to get the app?
@@ -1251,7 +1205,7 @@
                             <img src="" alt="Fruit Monster Island"/>
                         </div>
                         <p>
-                            Hi. Sorry to bother you, but we've just released a new game app for phones and tablets, and we'd love it if you could try it out! It's a fun puzzle game called Fruit Monster Island, 
+                            Hi. Sorry to bother you, but we've just released a new game app for phones and tablets, and we'd love it if you could try it out! It's a fun puzzle game called Fruit Monster Island,
                             where you match 3 or more fruit to feed your monsters. Would you like to try it?
                         </p>
                         <div>
@@ -1265,14 +1219,7 @@
                     <p>root@cardgames.io: <input type="text" id="matrix-log-filter"/></p>
                     <textarea id="log-area"></textarea>
                 </div>
-                
-                
 
-                
-                    <div id="facebook-promo" class="underboard-message appmode-remove">
-                        Hi! We've just released a new mobile app, <a href="https://fruitmonsterisland.com/">Fruit Monster Island</a>. Please check it out! Any questions or comments, come 
-                        to our <a href="https://facebook.com/cardgames.io/">Facebook page</a> or follow us on <a href="https://twitter.com/cardgames_io">Twitter</a>.
-                    </div>
                     <div id="star-wars-day" class="underboard-message theme-hidden starwars appmode-remove">
                         <p>Happy Star Wars Day! May the 4th be with you!</p>
 
@@ -1298,26 +1245,17 @@
                         Don't like the Christmas theme? <a class="theme-off" href="#">Click here to turn the theme off</a>. Or come on over to our <a target="_blank" href="https://www.facebook.com/cardgames.io">Facebook page</a>
                         and tell us all about it.
                     </div>
-                
+
             </div>
 
             <div id="draper-right" class="don-draper appmode-remove">
                 <label>Advertisement</label>
-                
-                
-                
-                <!-- Spades Right Skyscraper -->
-                <ins class="adsbygoogle adslot_2"
-                    style="display:block"
-                    data-ad-client="ca-pub-9002823967926225"
-                    data-ad-slot="7055249796"
-                    data-ad-format="auto"></ins>
-                <script>
-                adsbygoogle.push({});
-                </script>
-                
 
-                                
+
+
+
+
+
             </div>
             <div style="clear:both" class="appmode-remove"></div>
 
@@ -1327,17 +1265,17 @@
         <!-- row 3, all text content -->
         <div id="textcontent" class="appmode-hide">
 
-        
-            
+
+
 
 
 
 
 <div id="rules">
-    
+
     <h2>Spades Rules</h2>
-    
-    
+
+
 	<p>
 	These are the rules I use for Spades. I got them from John McLeod's <a href="http://www.pagat.com/boston/spades.html" target="_blank">pagat.com</a>, which has rules for pretty much all card games. (C) John McLeod, 2011 - reprinted with permission.
 	</p>
@@ -1358,14 +1296,14 @@
 	<p>
 		The first dealer is chosen at random, and the turn to deal rotates
 		clockwise. The cards are shuffled and then dealt singly, in clockwise order
-		beginning with the player on dealer's left, until all 52 cards have been 
+		beginning with the player on dealer's left, until all 52 cards have been
 		dealt and everyone has 13.
 	</p>
 
 	<h3>The Bidding</h3>
 	<p>
-		In Spades, all four players bid a number of tricks. Each team adds together 
-		the bids of the two partners, and the total is the number of tricks that 
+		In Spades, all four players bid a number of tricks. Each team adds together
+		the bids of the two partners, and the total is the number of tricks that
 		team must try to win in order to get a positive score. The bidding begins
 		with the player to dealer's left and continues clockwise around the table.
 		Everyone must bid a number, and in theory any number from 0 to 13 is
@@ -1376,7 +1314,7 @@
 
 	<p>
 		<strong>Example:</strong> South deals; West bids 3; North bids 1;
-		East bids 4; South bids 4. The objective of North and South is to win at 
+		East bids 4; South bids 4. The objective of North and South is to win at
 		least 5 tricks (4+1), East and West try to win at least 7 (4+3).
 	</p>
 
@@ -1400,7 +1338,7 @@
 	<p>
 		A trick containing a spade is won by the highest spade played; if no spade
 		is played, the trick is won by the highest card of the suit led. The winner
-		of each trick leads to the next. Spades may not be led until either some 
+		of each trick leads to the next. Spades may not be led until either some
 		player has played a spade (on the lead of another suit, of course), or the
 		leader has nothing but spades left in hand.
 	</p>
@@ -1420,15 +1358,15 @@
 		bags. A side which (over several deals) accumulates ten or more bags has
 		100 points deducted from its score. Any bags beyond ten are carried over
 		to the next cycle of ten overtricks - that is if they reached twenty
-		overtricks they would lose another 100 points and so on. 
+		overtricks they would lose another 100 points and so on.
 	</p>
 
 	<p>
 		<strong>Example:</strong> Suppose a team whose score is 337 bids 5 tricks
-		and they have 7 bags carried over from the previous rounds. If they win 7 
-		tricks they score 52, taking their score to 389 (and their bags to 9). If 
+		and they have 7 bags carried over from the previous rounds. If they win 7
+		tricks they score 52, taking their score to 389 (and their bags to 9). If
 		they win 8 tricks they score 53, but lose 100 because they now have 10 bags,
-		and their score becomes 290 (337 + 53 - 100). If they win 9 tricks they score 
+		and their score becomes 290 (337 + 53 - 100). If they win 9 tricks they score
 		54 and lose 100, bringing their score to 291.
 	</p>
 
@@ -1437,7 +1375,7 @@
 	</p>
 
 	<p>
-		If a bid of nil is successful, the nil bidder's side receives 100 points. 
+		If a bid of nil is successful, the nil bidder's side receives 100 points.
 		This is in addition to the score won (or lost) by the partner of the nil
 		bidder for tricks made. If a bid of nil fails - that is, the bidder takes
 		at least one trick - the bidder's side loses 100 points, but still receives
@@ -1451,21 +1389,21 @@
 
 	<p>
 		The side which reaches 500 points first wins the game. If both sides reach
-		500 points in a single deal, the side with the higher score wins.	
+		500 points in a single deal, the side with the higher score wins.
 	</p>
 
- 
+
     <p class="appmode-remove"><a href="#play" class="playlink">Back to game</a></p>
 </div>
 
 
 <div id="about" class="appmode-remove">
     <h2>About Spades</h2>
-    
-	<div id="authorpic"><img src="https://d3hp2os08tb528.cloudfront.net/shared/images/einar.jpg" alt="Author image"/></div>	
+
+	<div id="authorpic"><img src="https://d3hp2os08tb528.cloudfront.net/shared/images/einar.jpg" alt="Author image"/></div>
 	<p>
-		This online version of the classic card game Spades was made by me. My name is Einar Egilsson and over there on the left is my current Facebook profile picture! 
-		Spades is the fourth card game I've made, the other three are <a href="/hearts/">Hearts</a>, 
+		This online version of the classic card game Spades was made by me. My name is Einar Egilsson and over there on the left is my current Facebook profile picture!
+		Spades is the fourth card game I've made, the other three are <a href="/hearts/">Hearts</a>,
 		<a href="/shithead/">Shithead</a> and <a href="/crazyeights/">Crazy Eights</a>.
 		Spades is very similar to an Icelandic game I used to play, called 'Kani'. It is the first game I've done where there's any kind
 		of team play going on, which made it interesting to write. I hope I've made your partner, <span class="top-player-name">Bill</span>, smart enough that it's not annoying
@@ -1473,9 +1411,9 @@
 	</p>
 
 	<p>
-		The game is made using html+JavaScript+css with jQuery used for the animations. All the graphics used for the game 
-		I found at <a href="http://www.openclipart.org">OpenClipArt</a>, a great site with free graphics. The excellent 
-		playing card images were made by <a href="http://nicubunu.ro/">Nicu Buculei</a>, and the player images were made 
+		The game is made using html+JavaScript+css with jQuery used for the animations. All the graphics used for the game
+		I found at <a href="http://www.openclipart.org">OpenClipArt</a>, a great site with free graphics. The excellent
+		playing card images were made by <a href="http://nicubunu.ro/">Nicu Buculei</a>, and the player images were made
 		by <a href="http://www.openclipart.org/user-detail/Gerald_G">Gerald G</a>.
 	</p>
 
@@ -1489,20 +1427,20 @@
 
 
             <p id="version-info" class="appmode-remove">This is version 3062 of Spades.</p>
-            
+
             <p id="privacy" class="appmode-remove">
                 This website uses cookies to store your preferences, and for advertising purposes. Read more in our <a href="/privacy/">Privacy Policy</a> or <a href="/privacy/#settings">manage your privacy settings</a>.
             </p>
-            
+
 
         </div>
         <!-- end row 3 -->
 
 
         <script type="text/javascript" src="/spades/shared/lib/jquery-1.9.1.min.js"></script>
-        
+
         <script type="text/javascript" src="/spades/shared/lib/socket.io.js"></script>
-        
+
         <script>
             //Only load huge polyfill file for crap browsers...
             if (typeof Symbol === 'undefined' || !Array.prototype.find || !Array.prototype.includes) {
@@ -1524,13 +1462,13 @@
             }
         </script>
 
-        
+
         <script src="/spades/3062/spades.min.js"></script>
-        
+
     </div>
-    
-    
-    
-    
+
+
+
+
 </body>
 </html>
